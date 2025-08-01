@@ -4,9 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalist Redesign</title>
-    <link rel="stylesheet" href="styles.css">
+    <style id="theme-style">
+        body {
+            background: #000;
+            color: #fff;
+        }
+        header, footer, section {
+            background: #181818;
+            color: #fff;
+            border-radius: 8px;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+        a { color: #ffd700; }
+        button {
+            margin: 0.5em 0.5em 1em 0;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        button.light {
+            background: #eee;
+            color: #333;
+        }
+    </style>
+    <script>
+        function setTheme(mode) {
+            const style = document.getElementById('theme-style');
+            if (mode === 'light') {
+                style.innerHTML = `
+                    body { background: #fff; color: #000; }
+                    header, footer, section {
+                        background: #fafafa;
+                        color: #000;
+                        border-radius: 8px;
+                        padding: 1em;
+                        margin-bottom: 1em;
+                    }
+                    a { color: #0074d9; }
+                    button {
+                        margin: 0.5em 0.5em 1em 0;
+                        padding: 0.5em 1em;
+                        border: none;
+                        border-radius: 4px;
+                        background: #eee;
+                        color: #333;
+                        cursor: pointer;
+                    }
+                    button.dark {
+                        background: #333;
+                        color: #fff;
+                    }
+                `;
+            } else {
+                style.innerHTML = `
+                    body { background: #000; color: #fff; }
+                    header, footer, section {
+                        background: #181818;
+                        color: #fff;
+                        border-radius: 8px;
+                        padding: 1em;
+                        margin-bottom: 1em;
+                    }
+                    a { color: #ffd700; }
+                    button {
+                        margin: 0.5em 0.5em 1em 0;
+                        padding: 0.5em 1em;
+                        border: none;
+                        border-radius: 4px;
+                        background: #333;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                    button.light {
+                        background: #eee;
+                        color: #333;
+                    }
+                `;
+            }
+        }
+    </script>
 </head>
 <body>
+    <div>
+        <button class="dark" onclick="setTheme('dark')">Dark Mode</button>
+        <button class="light" onclick="setTheme('light')">Light Mode</button>
+    </div>
     <header>
         <h1>Welcome to My Portfolio</h1>
     </header>
@@ -14,31 +100,31 @@
         <section id="resume">
             <h2>Resume</h2>
             <p>Built and sold landscaping, appliance, and construction businesses
-<br>
-Founded blockchain and software startups
-<br>
-Sold produce delivery app
-<br>
-Launched motorsports and vacation rental ventures
-<br>
-Acquiring and revitalizing historic hotels
-<br>
-Creating food bank and resource center in Texas
-<br>
-Mostly self-funded but had a lot of help, started at 14, lifelong entrepreneur</p>
+            <br>
+            Founded blockchain and software startups
+            <br>
+            Sold produce delivery app
+            <br>
+            Launched motorsports and vacation rental ventures
+            <br>
+            Acquiring and revitalizing historic hotels
+            <br>
+            Creating food bank and resource center in Texas
+            <br>
+            Mostly self-funded but had a lot of help, started at 14, lifelong entrepreneur</p>
             <!-- Other content streamlined for clarity and simplicity -->
         </section>
         <section id="projects">
             <h2>Currently</h2>
             <p>
-<br>
-Brendle Hotel – Restoring a historic hotel into thriving boutique stays.
-<br>
-Robstown House of Prayer – Launching a food bank, worship center, and Christian outreach hub.
-<br>
-Professional Life – Build businesses, buildings, and ideas.
-<br>
-Personal Life – Play guitar, explore God’s creation, and aspire to serve Jesus.</p>
+            <br>
+            Brendle Hotel – Restoring a historic hotel into thriving boutique stays.
+            <br>
+            Robstown House of Prayer – Launching a food bank, worship center, and Christian outreach hub.
+            <br>
+            Professional Life – Build businesses, buildings, and ideas.
+            <br>
+            Personal Life – Play guitar, explore God’s creation, and aspire to serve Jesus.</p>
             <!-- Project details without unnecessary embellishments -->
         </section>
         <!-- Removed Stats section and any <img> tags -->
